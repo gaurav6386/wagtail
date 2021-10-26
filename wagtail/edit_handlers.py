@@ -15,15 +15,13 @@ from modelcluster.models import get_serializable_data_for_fields
 from taggit.managers import TaggableManager
 
 from wagtail.admin import compare, widgets
-from wagtail.admin.forms.models import WagtailAdminModelForm, formfield_for_dbfield
-from wagtail.coreutils import camelcase_to_underscore, resolve_model_string
-from wagtail.fields import RichTextField
-
-
 # DIRECT_FORM_FIELD_OVERRIDES, FORM_FIELD_OVERRIDES are imported for backwards
 # compatibility, as people are likely importing them from here and then
 # appending their own overrides
-from wagtail.admin.forms.models import DIRECT_FORM_FIELD_OVERRIDES, FORM_FIELD_OVERRIDES  # noqa
+from wagtail.admin.forms.models import (  # noqa
+    DIRECT_FORM_FIELD_OVERRIDES, FORM_FIELD_OVERRIDES, WagtailAdminModelForm, formfield_for_dbfield)
+from wagtail.coreutils import camelcase_to_underscore, resolve_model_string
+from wagtail.fields import RichTextField
 
 
 def widget_with_script(widget, script):
