@@ -4,8 +4,8 @@ from django.test import RequestFactory, TestCase
 from django.test.utils import override_settings
 from django.urls.exceptions import NoReverseMatch
 
-from wagtail.contrib.routable_page.templatetags.wagtailroutablepage_tags import routablepageurl
 from wagtail.models import Page, Site
+from wagtail.templatetags.wagtailroutablepage_tags import routablepageurl
 from wagtail.test.routablepage.models import (
     RoutablePageTest, RoutablePageWithOverriddenIndexRouteTest)
 

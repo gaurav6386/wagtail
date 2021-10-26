@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 
-from wagtail.contrib.routable_page.models import RoutablePage, route
+from wagtail.models.routable_page import RoutablePage, route
 
 
 def routable_page_external_view(request, arg="ARG NOT SET"):
