@@ -23,7 +23,7 @@ from wagtail.contrib.documents.rich_text import DocumentLinkHandler
 from wagtail.contrib.documents.rich_text.contentstate import ContentstateDocumentLinkConversionRule
 from wagtail.contrib.documents.rich_text.editor_html import EditorHTMLDocumentLinkConversionRule
 from wagtail.models import BaseViewRestriction
-from wagtail.wagtail_hooks import require_wagtail_login
+from wagtail.wagtail_hooks import utils
 
 
 @hooks.register('register_admin_urls')
@@ -186,7 +186,7 @@ def check_view_restrictions(document, request):
                 return TemplateResponse(request, password_required_template, context)
 
             elif restriction.restriction_type in [BaseViewRestriction.LOGIN, BaseViewRestriction.GROUPS]:
-                return require_wagtail_login(next=request.get_full_path())
+                return utils.require_wagtail_login(next=request.get_full_path())
 
 
 class DocumentAdminURLFinder(ModelAdminURLFinder):
