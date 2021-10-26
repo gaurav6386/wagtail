@@ -16,7 +16,7 @@ Make sure `"wagtail.contrib.routable_page"` is added to `INSTALLED_APPS`, see [I
 from django.shortcuts import redirect
 
 from wagtail.contrib.forms.models import AbstractEmailForm
-from wagtail.contrib.routable_page.models import RoutablePageMixin, route
+from wagtail.models.routable_page import RoutablePageMixin, route
 
 
 class FormPage(RoutablePageMixin, AbstractEmailForm):
